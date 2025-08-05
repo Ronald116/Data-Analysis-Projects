@@ -1,0 +1,1 @@
+This repo contains all ALX-SQL projects
