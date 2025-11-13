@@ -5,7 +5,7 @@
 2. [Objectives](#objectives)
 3. [Dataset Description](#dataset-description)
 4. [Tools Used](#tools-used)
-5. [Data Cleaning & Preparation](#data-cleaning-preparation)
+5. [Data Cleaning and Preparation](#data-cleaning-preparation)
 6. [SQL Analysis](#sql-analysis)
 7. [Power BI Dashboard](#powerbi-dashboard)
 8. [Key Insights](#key-insights)
@@ -125,7 +125,7 @@ The dataset allows for multi-dimensional analysis of sales performance, customer
 5. `ChatGPT`
 
 
-### Data Cleaning & Preparation
+### Data Cleaning and Preparation
 Before analysis, the dataset underwent cleaning and preparation to ensure consistency, accuracy, and reliability. This was achieved using `MS Excel Power Query` and `SQL`. 
 This included handling missing values, correcting inconsistent formats, standardizing data types, and validating the integrity of relationships between tables.
 #### Key Cleaning and Preparation Steps
