@@ -14,7 +14,7 @@
 11. [About the Author](#about-the-author)
 
 
-### Project Overview 🧠
+### Project Overview
 This project analyzes restaurant order data to uncover insights into sales performance, customer preferences and operational efficiency.
 The analysis follows a full data analytical workflow:
 
