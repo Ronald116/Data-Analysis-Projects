@@ -163,3 +163,8 @@ This included handling missing values, correcting inconsistent formats, standard
 - Referential integrity is maintained across tables.
 - The dataset is structured for SQL analysis and easy visualization in Power BI.
 
+#### Screenshots
+![Inconsistent Date Values](/images/inconsistent_date_values.png)
+![Replacing currency sign to null](/images/Replacing_sign.png)
+![Splitting Birthday Column](/images/splitting_birthday_column.png)
+
