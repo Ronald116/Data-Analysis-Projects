@@ -1,4 +1,4 @@
-ProductKey,Product Name,Brand,Color,Unit Cost USD,Unit Price USD,SubcategoryKey,Subcategory,CategoryKey,Category
+productkey,product_name,brand,color,unit_cost_USD,unit_price_USD,subcategorykey,subcategory,categorykey,category
 1,Contoso 512MB MP3 Player E51 Silver,Contoso,Silver,$6.62 ,$12.99 ,0101,MP4&MP3,01,Audio
 2,Contoso 512MB MP3 Player E51 Blue,Contoso,Blue,$6.62 ,$12.99 ,0101,MP4&MP3,01,Audio
 3,Contoso 1G MP3 Player E100 White,Contoso,White,$7.40 ,$14.52 ,0101,MP4&MP3,01,Audio
