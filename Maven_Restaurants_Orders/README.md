@@ -22,3 +22,6 @@ The analysis follows a full data analytical workflow:
 2. **SQL** for data exploration and business analysis
 3. **Power BI** for interactive dashboard visualization
 4. **ChatGPT** for assistance
+
+
+### Objectives
