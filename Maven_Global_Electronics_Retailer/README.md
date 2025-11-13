@@ -5,7 +5,7 @@
 2. [Objectives](#objectives)
 3. [Dataset Description](#dataset-description)
 4. [Tools Used](#tools-used)
-5. [Data Cleaning and Preparation](#data-cleaning-preparation)
+5. [Data Cleaning and Preparation](#data-cleaning-and-preparation)
 6. [SQL Analysis](#sql-analysis)
 7. [Power BI Dashboard](#powerbi-dashboard)
 8. [Key Insights](#key-insights)
