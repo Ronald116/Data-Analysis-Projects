@@ -81,3 +81,85 @@ From an analyst’s perspective, the goal is to explore patterns, trends, and re
 **Overall Objective**
 
 ***This project seeks to bridge data insights with business decisions, providing a clear, actionable understanding of global electronics retail operations from multiple perspectives: strategic (executives), operational (managers), and analytical (analyst).***
+
+
+### Dataset Description
+The dataset used in this project comes from a global electronics retail business and contains transactional, customer, product, and store-level information. 
+It covers sales orders, product details, customer demographics, store characteristics, and currency exchange rates. 
+The dataset allows for multi-dimensional analysis of sales performance, customer behavior, and store operations.
+
+#### Tables Overview
+1. **Sales**
+   - Contains transactional data for each order and line item.
+   - Key fields: `order_number`, `line_item`, `order_date`, `delivery_date`, `customer_key`, `store_key`, `product_key`, `quantity`, `currency_code`.
+
+2. **Customers**
+   - Contains demographic details of customers.
+   - Key fields: `customer_key`, `name`, `gender`, `city`, `state`, `zip_code`, `country`, `continent`, `birthday`.
+
+3. **Products**
+   - Contains information about products sold.
+   - Key fields: `product_key`, `product_name`, `brand`, `color`, `unit_cost_usd`, `unit_price_usd`, `subcategory`, `category`.
+
+4. **Stores**
+   - Contains information about stores.
+   - Key fields: `store_key`, `store_name`, `country`, `state`, `square_meters`, `open_date`.
+
+5. **Exchange Rates**
+   - Contains daily currency exchange rates against USD.
+   - Key fields: `date`, `currency`, `exchange`.
+
+#### Notes on Data Quality
+
+- Some date fields were in inconsistent formats and were standardized to ISO format (YYYY-MM-DD).
+- Currency columns contained symbols and were cleaned to numeric values.
+- Some missing values in `square_meters` and `zip_code` columns were handled appropriately.
+- `Order Number` is not unique per row because multiple line items can exist per order.
+
+
+### Tools Used
+1. `Microsoft Excel`
+2. `SQL (PostgreSQL)`
+3. `Microsoft Power BI`
+4. `Python`
+5. `ChatGPT`
+
+
+### Data Cleaning & Preparation
+Before analysis, the dataset underwent cleaning and preparation to ensure consistency, accuracy, and reliability. This was achieved using `MS Excel Power Query` and `SQL`. 
+This included handling missing values, correcting inconsistent formats, standardizing data types, and validating the integrity of relationships between tables.
+#### Key Cleaning and Preparation Steps
+
+1. **Date Columns Standardization**
+   - Date fields in `Customers`, `Sales`, and `Exchange Rates` tables were in multiple formats (e.g., DD/MM/YYYY, MM/DD/YYYY).
+   - Using Excel and Power Query, all date columns were standardized to ISO format (YYYY-MM-DD) for consistency.
+
+2. **Handling Missing Values**
+   - Some numeric fields like `square_meters` in `Stores` and `zip_code` in `Customers` contained missing values.
+   - Missing values were either filled with a default (e.g., 0 for store size) or left as `NULL` depending on business logic.
+
+3. **Cleaning Currency Columns**
+   - `Unit Cost USD` and `Unit Price USD` in `Products` contained `$` symbols and extra spaces.
+   - Power Query was used to remove symbols and convert columns to numeric type.
+
+4. **Primary Key Adjustments**
+   - `Order Number` in the `Sales` table was not unique because orders can have multiple line items.
+
+5. **Data Type Conversion**
+   - Text fields were validated for consistency (e.g., state codes, country names).
+   - Numeric fields were checked for correct formatting and range.
+
+6. **Consistency Checks**
+   - Cross-validated foreign keys:
+     - `Sales.customer_key` exists in `Customers`
+     - `Sales.product_key` exists in `Products`
+     - `Sales.store_key` exists in `Stores`
+   - Ensured no orphan records exist.
+
+#### Outcome
+
+- All tables are now clean and ready for analysis.
+- Dates, currency values, and numeric fields are standardized.
+- Referential integrity is maintained across tables.
+- The dataset is structured for SQL analysis and easy visualization in Power BI.
+
