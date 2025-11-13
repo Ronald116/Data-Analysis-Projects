@@ -164,7 +164,7 @@ This included handling missing values, correcting inconsistent formats, standard
 - The dataset is structured for SQL analysis and easy visualization in Power BI.
 
 #### Screenshots
-![Inconsistent Date Values](/images/inconsistent_date_values.png)
-![Replacing currency sign to null](/images/Replacing_sign.png)
-![Splitting Birthday Column](/images/splitting_birthday_column.png)
+![Inconsistent Date Values](images/inconsistent_date_values.png)
+![Replacing currency sign to null](images/Replacing_sign.png)
+![Splitting Birthday Column](images/splitting_birthday_column.png)
 
