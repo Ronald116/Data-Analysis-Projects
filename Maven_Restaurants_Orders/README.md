@@ -14,11 +14,11 @@
 11. [About the Author](#about-the-author)
 
 
-### 🧠 Project Overview
+### Project Overview 🧠
 This project analyzes restaurant order data to uncover insights into sales performance, customer preferences and operational efficiency.
 The analysis follows a full data analytical workflow:
 
 1. **Excel** for data cleaning and inspection
 2. **SQL** for data exploration and business analysis
-3 **Power BI** for interactive dashboard visualization
+3. **Power BI** for interactive dashboard visualization
 4. **ChatGPT** for assistance
