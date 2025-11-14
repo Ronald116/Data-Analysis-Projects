@@ -28,7 +28,7 @@ The primary goal of this project is to provide a data-driven understanding of gl
 
 1️⃣ Executive Perspective
 
-- For the board of executives, the focus is on high-level performance metrics and key trends:
+For the board of executives, the focus is on high-level performance metrics and key trends:
 
 - Track total revenue across all regions and markets.
 
