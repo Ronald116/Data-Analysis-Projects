@@ -244,3 +244,11 @@ This included handling missing values, correcting inconsistent formats, standard
       Action: Protect and grow AOV by:
       - Bundling (PC + monitor + warranty)
       - Cross-selling extended warranties and installation services
+
+6. **Screenshots snippets**
+![Revenue by stores](images/stores_reveue.png)
+![YoY growth](images/revenue_growth_by_year.png)
+![Average Order Value](images/average_order_value.png)
+![Revenue by brands](images/Revenue_by_brands.png)
+![Revenue by Continents](images/revenue_by_continets.png)
+![Revenue by Country](images/Revenue_by_country.png)
