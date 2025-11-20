@@ -42,8 +42,6 @@ For the board of executives, the focus is on high-level performance metrics and 
 
 - Offer strategic insights to support investment, expansion, or market prioritization decisions.
 
-*Example takeaway:*
-*“North America and Europe contribute 65% of total revenue, while APAC shows strong growth potential. Smartphones and laptops remain the top-selling categories.”*
 
 2️⃣ Manager Perspective
 
@@ -57,8 +55,6 @@ For the board of executives, the focus is on high-level performance metrics and 
 
 - Provide recommendations for promotions, inventory allocation, and targeted marketing campaigns.
 
-*Example takeaway:*
-*“Laptop sales in Europe are underperforming relative to previous quarters. Consider launching targeted promotions or reviewing pricing strategies to boost sales.”*
 
 3️⃣ Analyst Perspective
 
@@ -74,8 +70,7 @@ From an analyst’s perspective, the goal is to explore patterns, trends, and re
 
 - Link insights to actionable recommendations for management and executives.
 
-*Example takeaway:*
-*“Customer repeat purchase rate is highest in APAC, suggesting that targeted loyalty programs or upselling campaigns could further increase revenue in that region.”*
+
 
 **Overall Objective**
 ***This project seeks to bridge data insights with business decisions, providing a clear, actionable understanding of global electronics retail operations from multiple perspectives: strategic (executives), operational (managers), and analytical (analyst).***
@@ -169,45 +164,83 @@ This included handling missing values, correcting inconsistent formats, standard
 ![Replacing currency sign to null](images/Replacing_sign.png)
 ![Splitting Birthday Column](images/splitting_birthday_column.png)
 
-
 ## SQL Analysis
 
 ### Tech Stack & Tools
 
 ***SQL Engine***
 
-* **PostgreSQL 16** - Used for all relational data modeling, querying, indexing and analytical SQL functions
+- **PostgreSQL 16** - Used for all relational data modeling, querying, indexing and analytical SQL functions
 
 ***Python Integration***
 
-* **Jupyter Notebook** with the **PostgreSQL magic command (%%sql)** to run SQL queries directly inside python
-* Used the PostgreSQL conection string to connect to the database and execute queries seamlessly
+- **Jupyter Notebook** with the **PostgreSQL magic command (%%sql)** to run SQL queries directly inside python
+- Used the PostgreSQL conection string to connect to the database and execute queries seamlessly
 
 ### Database Setup Process
 
 1. **Created PostgreSQL Database**
 
-* Created a new database using **pgAdmin 4**
-* named the database according to the project (Maven_electronics)
+- Created a new database using **pgAdmin 4**
+- named the database according to the project (Maven_electronics)
 
 2. **Connected to PostgreSQL Using Python**
 
-* Established a connection in jupyter notebook using:
+- Established a connection in jupyter notebook using:
 ![Database connection](images/connection_database.png)
 
 3. **Created Tables**
 
-* Defined table schemas using `CREATE TABLE` statements
-* Ensured each table had:
-  * Primary Keys (PK)
-  * Foreign Keys (FK)
-  * Appropriate data types
+- Defined table schemas using `CREATE TABLE` statements
+- Ensured each table had:
+  - Primary Keys (PK)
+  - Foreign Keys (FK)
+  - Appropriate data types
 ![Table Creation snippet](images/table_creation.png)
 ![Foreign Keys snippet](images/foreign_keys_addition.png)
 
 4. **Imported CSV Datasets**
 
-* Loaded CSV files into PostgreSQL using:
-  * `COPY` command inside SQL
-  * Verified rows using `SELECT COUNT(*) FROM table_name;`.
+- Loaded CSV files into PostgreSQL using:
+  - `COPY` command inside SQL
+  - Verified rows using `SELECT COUNT(*) FROM table_name;`.
 ![CSV data import](images/data_import.png)
+
+5. **Recommendations**
+
+#### Executive-Level Insights
+
+1. ***North America is the Cash Cow***
+   * Contributes `58%` of total revenue `($12.92M out of $22.1M)`
+   * United States alone = `$11.44M (52% of global revenue)`.
+
+      **Action**: Prioritize inventory, marketing budget, and logistics investments in the US. Any supply-chain disruption here directly hits more than half your profit.
+
+2. **Online Channel is Now the #1 Store**
+   * Online revenue = `$4.42M` → bigger than any single country except the United States.
+   * Beats the best physical store (Kansas) by almost 7×.
+
+      **Action:** Aggressively shift budget from underperforming physical stores to e-commerce. Target 30–40% of total revenue from online within 2 years (very achievable).
+
+3. **Adventure Works is the Golden Brand**
+   * $4.56M revenue → 20.6% of company total
+   * Ranks #1 in revenue AND #4 in units sold → high-ticket + decent volume
+   * Their desktop PCs and 52" LCD TVs dominate the top-10 product list
+
+      **Action:**
+   - Negotiate exclusive models or co-branding deals with Adventure Works.
+   - Run “Adventure Works Month” promotions across all channels
+   - Feature them heavily on homepage and online ads
+
+4. **Contoso Owns Volume – Use It for Customer Acquisition**
+   * 19,186 units sold → almost 2× the next brand
+   * Lower average selling price → perfect entry-level brand
+
+      **Action**: Use Contoso water heaters, laptops, and accessories as loss-leaders or bundle items to bring new customers in, then upsell Adventure Works / WWI premium products.
+
+5. **Average Order Value of $2,219 is Exceptionally High**
+   * Driven by big-ticket items (desktop PCs, large TVs, water heaters)
+
+      Action: Protect and grow AOV by:
+      - Bundling (PC + monitor + warranty)
+      - Cross-selling extended warranties and installation services
