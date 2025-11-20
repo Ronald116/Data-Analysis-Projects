@@ -246,6 +246,8 @@ This included handling missing values, correcting inconsistent formats, standard
       - Cross-selling extended warranties and installation services
 
 6. **Screenshots snippets**
+
+
 ![Revenue by stores](images/stores_reveue.png)
 ![YoY growth](images/revenue_growth_by_year.png)
 ![Average Order Value](images/average_order_value.png)
