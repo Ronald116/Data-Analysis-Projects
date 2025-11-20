@@ -192,5 +192,22 @@ This included handling missing values, correcting inconsistent formats, standard
 
 2. **Connected to PostgreSQL Using Python**
 
-*Established a connection in jupyter notebook using:
+* Established a connection in jupyter notebook using:
 ![Database connection](images/connection_database.png)
+
+3. **Created Tables**
+
+* Defined table schemas using `CREATE TABLE` statements
+* Ensured each table had:
+  * Primary Keys (PK)
+  * Foreign Keys (FK)
+  * Appropriate data types
+![Table Creation snippet](images/table_creation.png)
+![Foreign Keys snippet](images/foreign_keys_addition.png)
+
+4. **Imported CSV Datasets**
+
+* Loaded CSV files into PostgreSQL using:
+  * `COPY` command inside SQL
+  * Verified rows using `SELECT COUNT(*) FROM table_name;`.
+![CSV data import](images/data_import.png)
