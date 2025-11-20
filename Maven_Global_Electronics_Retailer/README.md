@@ -193,4 +193,4 @@ This included handling missing values, correcting inconsistent formats, standard
 2. **Connected to PostgreSQL Using Python**
 
 *Established a connection in jupyter notebook using:
-![Database connection](/images/connection_database.png)
+![Database connection](images/connection_database.png)
