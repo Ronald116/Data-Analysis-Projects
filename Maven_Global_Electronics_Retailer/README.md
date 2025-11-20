@@ -1,6 +1,7 @@
 # Capstone Project 1 - Maven Global Electronics Retail Analysis
 
 ## 📋 Table of Contents
+
 1. [Project Overview](#project-overview)
 2. [Objectives](#objectives)
 3. [Dataset Description](#dataset-description)
@@ -13,8 +14,8 @@
 10. [screenshots](#screenshots)
 11. [About the Author](#about-the-author)
 
-
 ### Project Overview
+
 This project analyzes global electronics retail sales to uncover insights on revenue, top selling products, customer trends and regional performance.
 The analysis follows a full data analytical workflow:
 
@@ -24,6 +25,7 @@ The analysis follows a full data analytical workflow:
 4. **ChatGPT** for assistance
 
 ### Objectives
+
 The primary goal of this project is to provide a data-driven understanding of global electronics retail performance. Using the Sales, Customers, Products, Stores, and Exchange Rates datasets, the project aims to uncover insights that inform strategic and operational decisions.
 
 1️⃣ Executive Perspective
@@ -41,7 +43,6 @@ For the board of executives, the focus is on high-level performance metrics and 
 - Offer strategic insights to support investment, expansion, or market prioritization decisions.
 
 *Example takeaway:*
-
 *“North America and Europe contribute 65% of total revenue, while APAC shows strong growth potential. Smartphones and laptops remain the top-selling categories.”*
 
 2️⃣ Manager Perspective
@@ -57,7 +58,6 @@ For the board of executives, the focus is on high-level performance metrics and 
 - Provide recommendations for promotions, inventory allocation, and targeted marketing campaigns.
 
 *Example takeaway:*
-
 *“Laptop sales in Europe are underperforming relative to previous quarters. Consider launching targeted promotions or reviewing pricing strategies to boost sales.”*
 
 3️⃣ Analyst Perspective
@@ -75,20 +75,19 @@ From an analyst’s perspective, the goal is to explore patterns, trends, and re
 - Link insights to actionable recommendations for management and executives.
 
 *Example takeaway:*
-
 *“Customer repeat purchase rate is highest in APAC, suggesting that targeted loyalty programs or upselling campaigns could further increase revenue in that region.”*
 
 **Overall Objective**
-
 ***This project seeks to bridge data insights with business decisions, providing a clear, actionable understanding of global electronics retail operations from multiple perspectives: strategic (executives), operational (managers), and analytical (analyst).***
 
-
 ### Dataset Description
-The dataset used in this project comes from a global electronics retail business and contains transactional, customer, product, and store-level information. 
-It covers sales orders, product details, customer demographics, store characteristics, and currency exchange rates. 
+
+The dataset used in this project comes from a global electronics retail business and contains transactional, customer, product, and store-level information.
+It covers sales orders, product details, customer demographics, store characteristics, and currency exchange rates.
 The dataset allows for multi-dimensional analysis of sales performance, customer behavior, and store operations.
 
 #### Tables Overview
+
 1. **Sales**
    - Contains transactional data for each order and line item.
    - Key fields: `order_number`, `line_item`, `order_date`, `delivery_date`, `customer_key`, `store_key`, `product_key`, `quantity`, `currency_code`.
@@ -116,18 +115,19 @@ The dataset allows for multi-dimensional analysis of sales performance, customer
 - Some missing values in `square_meters` and `zip_code` columns were handled appropriately.
 - `Order Number` is not unique per row because multiple line items can exist per order.
 
-
 ### Tools Used
+
 1. `Microsoft Excel`
 2. `SQL (PostgreSQL)`
 3. `Microsoft Power BI`
 4. `Python`
 5. `ChatGPT`
 
-
 ### Data Cleaning and Preparation
-Before analysis, the dataset underwent cleaning and preparation to ensure consistency, accuracy, and reliability. This was achieved using `MS Excel Power Query` and `SQL`. 
+
+Before analysis, the dataset underwent cleaning and preparation to ensure consistency, accuracy, and reliability. This was achieved using `MS Excel Power Query` and `SQL`.
 This included handling missing values, correcting inconsistent formats, standardizing data types, and validating the integrity of relationships between tables.
+
 #### Key Cleaning and Preparation Steps
 
 1. **Date Columns Standardization**
@@ -164,7 +164,33 @@ This included handling missing values, correcting inconsistent formats, standard
 - The dataset is structured for SQL analysis and easy visualization in Power BI.
 
 #### Screenshots
+
 ![Inconsistent Date Values](images/inconsistent_date_values.png)
 ![Replacing currency sign to null](images/Replacing_sign.png)
 ![Splitting Birthday Column](images/splitting_birthday_column.png)
 
+
+## SQL Analysis
+
+### Tech Stack & Tools
+
+***SQL Engine***
+
+* **PostgreSQL 16** - Used for all relational data modeling, querying, indexing and analytical SQL functions
+
+***Python Integration***
+
+* **Jupyter Notebook** with the **PostgreSQL magic command (%%sql)** to run SQL queries directly inside python
+* Used the PostgreSQL conection string to connect to the database and execute queries seamlessly
+
+### Database Setup Process
+
+1. **Created PostgreSQL Database**
+
+* Created a new database using **pgAdmin 4**
+* named the database according to the project (Maven_electronics)
+
+2. **Connected to PostgreSQL Using Python**
+
+*Established a connection in jupyter notebook using:
+![Database connection](/images/connection_database.png)
