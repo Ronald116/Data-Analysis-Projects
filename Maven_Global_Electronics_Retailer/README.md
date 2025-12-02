@@ -254,3 +254,18 @@ This included handling missing values, correcting inconsistent formats, standard
 ![Revenue by brands](images/Revenue_by_brands.png)
 ![Revenue by Continents](images/revenue_by_continets.png)
 ![Revenue by Country](images/Revenue_by_country.png)
+
+
+#### Manager-Level Insights
+
+1. **Promotion Strategy (Discounts and Offers)**
+
+   Promotions should be strategically deployed to drive repeat purchases and clear low-performing stock, without cutting into the high margins of top-selling categories.
+
+2. **Inventory Allocation**
+
+   Inventory strategy must prioritize maximimizing stock of the most rofitable products in the highest-volume sales channels and regions.
+
+3. **Targeted Marketing Campaigns**
+
+   Marketing campaigns should be precise, addressing the preferences and revenue potential of the most valuable customer segments
