@@ -26,3 +26,28 @@ CREATE TABLE retail_sales (
 COPY retail_sales
 FROM 'E:\DATA_ANALYTICS\Data-Analysis-Projects\Data-Analysis-Projects\Retail_Sales_Dashboard\data\cleaned\Online_retail_cleaned.csv'
 WITH (FORMAT CSV, HEADER, DELIMITER ',');
+
+-- ----------------------------------------------------------------------------
+-- SECTION 2: BASIC SHAPE
+-- How big is the data?
+-- ----------------------------------------------------------------------------
+
+-- Total number of rows
+SELECT
+	COUNT(*) AS total_rows
+FROM retail_sales;
+
+-- Total number of columns
+SELECT
+	column_name,
+	data_type
+FROM information_schema.COLUMNS
+WHERE table_name = 'retail_sales';
+
+-- Preview the first 10 rows
+SELECT 
+	*
+FROM retail_sales
+LIMIT 10;
+
+
