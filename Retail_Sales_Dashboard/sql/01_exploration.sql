@@ -59,3 +59,34 @@ SELECT
 	MIN(DATE(invoice_date)) AS earliest_date,
 	MAX(DATE(invoice_date)) AS latest_date
 FROM retail_sales;
+
+-- ---------------------------------------------------------------------------
+-- SECTION 4: MISSING VALUES
+-- Check each columns for NULLS
+-- ---------------------------------------------------------------------------
+
+SELECT
+    COUNT(*) AS total_rows,
+    COUNT(*) FILTER (WHERE invoice_no IS NULL)    AS null_invoiceno,
+    COUNT(*) FILTER (WHERE stock_code IS NULL)    AS null_stockcode,
+    COUNT(*) FILTER (WHERE description IS NULL)  AS null_description,
+    COUNT(*) FILTER (WHERE quantity IS NULL)     AS null_quantity,
+    COUNT(*) FILTER (WHERE invoice_date IS NULL)  AS null_invoicedate,
+    COUNT(*) FILTER (WHERE unitprice IS NULL)    AS null_unitprice,
+    COUNT(*) FILTER (WHERE customer_id IS NULL)   AS null_customerid,
+    COUNT(*) FILTER (WHERE country IS NULL)      AS null_country
+FROM retail_sales;
+
+-- -----------------------------------------------
+-- SECTION 5: DUPLICATES
+-- Are there exact duplicate rows?
+-- -----------------------------------------------
+
+SELECT
+    invoice_no, stock_code, invoice_date, quantity, unitprice, customer_id,
+    COUNT(*) AS occurrences
+FROM retail_sales
+GROUP BY invoice_no, stock_code, invoice_date, quantity, unitprice, customer_id
+HAVING COUNT(*) > 1
+ORDER BY occurrences DESC
+LIMIT 20;
