@@ -1,4 +1,15 @@
--- TABLE CREATION	
+-- ========================================================================
+-- RETAIL SALES DASHBOARD
+-- PURPOSE: Understand the shape and quality
+--          of the raw dataset before analysis
+-- DATASET: UCI ONLINE RETAIL
+-- AUTHOR: RONALD N. BOTCHWAY
+-- DATE: 10TH APRIL, 2026
+-- =========================================================================
+
+-- -------------------------------------------------------------------------
+-- SECTION 1: TABLE CREATION
+-- -------------------------------------------------------------------------	
 DROP TABLE IF EXISTS retail_sales;
 CREATE TABLE retail_sales (
 	invoice_no	varchar,
@@ -15,5 +26,3 @@ CREATE TABLE retail_sales (
 COPY retail_sales
 FROM 'E:\DATA_ANALYTICS\Data-Analysis-Projects\Data-Analysis-Projects\Retail_Sales_Dashboard\data\cleaned\Online_retail_cleaned.csv'
 WITH (FORMAT CSV, HEADER, DELIMITER ',');
-
-SELECT * FROM retail_sales;
