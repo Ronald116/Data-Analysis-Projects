@@ -50,4 +50,12 @@ SELECT
 FROM retail_sales
 LIMIT 10;
 
+-- ---------------------------------------------------------------------------
+-- SECTION 3: DATE RANGE
+-- What time period does the data cover?
+-- ---------------------------------------------------------------------------
 
+SELECT
+	MIN(DATE(invoice_date)) AS earliest_date,
+	MAX(DATE(invoice_date)) AS latest_date
+FROM retail_sales;
