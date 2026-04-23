@@ -135,3 +135,51 @@ WHERE stock_code NOT IN ('POST', 'DOT', 'M', 'BANK CHARGES', 'PADS', 'C2', 'AMAZ
 -- confirm row count
 SELECT COUNT(*) AS rows_without_junk_codes
 FROM retail_sales_valid;
+
+-- -----------------------------------------------
+-- STEP 6: ADD A REVENUE COLUMN
+-- Calculate revenue per line item
+-- This will be your core metric in analysis
+-- -----------------------------------------------
+
+-- create a final clean table
+CREATE TABLE retail_sales_clean AS
+SELECT
+	invoice_no,
+	stock_code,
+	description,
+	quantity,
+	invoice_date,
+	unitprice,
+	customer_id,
+	country,
+	ROUND((quantity * unitprice)::numeric, 2) AS revenue
+FROM retail_sales_valid;
+
+-- preview final row count
+SELECT COUNT(*) AS final_clean_row
+FROM retail_sales_clean;
+
+-- preview final table
+SELECT *
+FROM retail_sales_clean;
+
+-- -----------------------------------------------
+-- STEP 7: FINAL SANITY CHECK
+-- Compare raw vs clean to make sure nothing
+-- unexpected was removed
+-- -----------------------------------------------
+
+SELECT
+    (SELECT COUNT(*) FROM retail_sales)       AS raw_rows,
+    (SELECT COUNT(*) FROM retail_sales_clean) AS clean_rows,
+    (SELECT COUNT(*) FROM retail_sales) -
+    (SELECT COUNT(*) FROM retail_sales_clean) AS total_rows_removed;
+
+-- Quick revenue check on clean data
+SELECT
+    ROUND(SUM(revenue)::numeric, 2) AS total_clean_revenue,
+    COUNT(DISTINCT invoice_no)        AS total_invoices,
+    COUNT(DISTINCT customer_id)       AS total_customers,
+    COUNT(DISTINCT country)          AS total_countries
+FROM retail_sales_clean;
