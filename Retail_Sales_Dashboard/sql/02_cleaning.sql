@@ -3,8 +3,8 @@
 -- File: 02_cleaning.sql
 -- Purpose: Clean the raw dataset and produce
 --          an analysis-ready table
--- Author: [Your Name]
--- Date: April 2026
+-- Author: Ronald Nathaniel Botchway
+-- Date: 23rd April 2026
 -- ============================================
 
 
@@ -87,3 +87,51 @@ WHERE quantity > 0;
 -- confirm new row count
 SELECT COUNT(*) pos_quantity_rows
 FROM retail_sales_pos_quantity;
+
+
+-- -----------------------------------------------
+-- STEP 4: REMOVE ZERO & NEGATIVE UNIT PRICES
+-- Zero price rows are free samples or errors
+-- and will distort revenue calculations
+-- -----------------------------------------------
+
+SELECT COUNT(*) AS neg_price
+FROM retail_sales_pos_quantity
+WHERE unitprice <= 0;
+
+CREATE TABLE retail_sales_valid_price AS
+SELECT *
+FROM retail_sales_pos_quantity
+WHERE unitprice > 0;
+
+-- confirm row counts
+SELECT COUNT(*) AS rows_after_invalid_price_removal
+FROM retail_sales_valid_price;
+
+
+-- -----------------------------------------------
+-- STEP 5: REMOVE JUNK STOCK CODES
+-- These are admin/service entries, not products
+-- Common ones: POST, DOT, M, BANK CHARGES,
+-- PADS, C2, AMAZONFEE, DCGSSBOY, DCGSSGIRL
+-- -----------------------------------------------
+
+SELECT DISTINCT stock_code, description
+FROM retail_sales_valid_price
+WHERE stock_code IN ('POST', 'DOT', 'M', 'BANK CHARGES', 'PADS', 'C2', 'AMAZONFEE', 'DCGSSBOY', 'DCGSSGIRL', 'SP1002')
+ORDER BY stock_code;
+
+-- Count how many rows these junk codes account for
+SELECT COUNT(*) AS junk_stockcode_rows
+FROM retail_sales_valid_price
+WHERE stock_code IN ('POST', 'DOT', 'M', 'BANK CHARGES', 'PADS', 'C2', 'AMAZONFEE', 'DCGSSBOY', 'DCGSSGIRL', 'SP1002');
+
+-- Remove junk stock codes
+CREATE TABLE retail_sales_valid AS
+SELECT *
+FROM retail_sales_valid_price
+WHERE stock_code NOT IN ('POST', 'DOT', 'M', 'BANK CHARGES', 'PADS', 'C2', 'AMAZONFEE', 'DCGSSBOY', 'DCGSSGIRL', 'SP1002');
+
+-- confirm row count
+SELECT COUNT(*) AS rows_without_junk_codes
+FROM retail_sales_valid;
